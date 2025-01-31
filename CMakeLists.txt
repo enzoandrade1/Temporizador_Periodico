@@ -41,8 +41,8 @@ pico_set_program_name(Temporizador_Periodico "Temporizador_Periodico")
 pico_set_program_version(Temporizador_Periodico "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(Temporizador_Periodico 0)
-pico_enable_stdio_usb(Temporizador_Periodico 0)
+pico_enable_stdio_uart(Temporizador_Periodico 1)
+pico_enable_stdio_usb(Temporizador_Periodico 1)
 
 # Add the standard library to the build
 target_link_libraries(Temporizador_Periodico
@@ -55,7 +55,8 @@ target_include_directories(Temporizador_Periodico PRIVATE
 
 # Add any user requested libraries
 target_link_libraries(Temporizador_Periodico 
-        
+        hardware_pio
+        hardware_clocks
         )
 
 pico_add_extra_outputs(Temporizador_Periodico)
